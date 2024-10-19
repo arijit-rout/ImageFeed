@@ -1,50 +1,90 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Rick and Morty Episode Character Feed
 
-Currently, two official plugins are available:
+This is a React-based web application that displays characters from selected episodes of the Rick and Morty series using the public [Rick and Morty API](https://rickandmortyapi.com/documentation/#rest). The episodes are listed in a side navigation bar, and clicking on an episode shows the characters featured in that episode.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Fetch and display episodes using the Rick and Morty API.
+- Responsive side navigation that lists all episodes.
+- Clickable episodes to display related characters.
+- Responsive, styled character grid with hover effects using **Bootstrap**.
+- Character grid automatically updates when an episode is selected.
+- Fully responsive for mobile and desktop devices.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Tech Stack
 
-- Configure the top-level `parserOptions` property like this:
+- **React**: JavaScript library for building user interfaces.
+- **TypeScript**: Type safety for the entire application.
+- **Bootstrap**: Responsive CSS framework for styling.
+- **Axios**: HTTP client for making API requests.
+- **React Hooks**: For state management and side effects.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## API Used
+
+The application uses the [Rick and Morty API](https://rickandmortyapi.com/documentation/#rest) for fetching data:
+
+- `/api/episode`: Fetches a list of all episodes.
+- `/api/character`: Fetches characters related to selected episodes.
+
+## Installation and Running Locally
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/arijit-rout/ImageFeed.git
+cd ImageFeed
+
+Here’s a complete README.md file for your React + TypeScript + Bootstrap project, with all necessary details:
+
+README.md
+md
+Copy code
+# Rick and Morty Episode Character Feed
+
+This is a React-based web application that displays characters from selected episodes of the Rick and Morty series using the public [Rick and Morty API](https://rickandmortyapi.com/documentation/#rest). The episodes are listed in a side navigation bar, and clicking on an episode shows the characters featured in that episode.
+
+## Features
+
+- Fetch and display episodes using the Rick and Morty API.
+- Responsive side navigation that lists all episodes.
+- Clickable episodes to display related characters.
+- Responsive, styled character grid with hover effects using **Bootstrap**.
+- Character grid automatically updates when an episode is selected.
+- Fully responsive for mobile and desktop devices.
+
+## Tech Stack
+
+- **React**: JavaScript library for building user interfaces.
+- **TypeScript**: Type safety for the entire application.
+- **Bootstrap**: Responsive CSS framework for styling.
+- **Axios**: HTTP client for making API requests.
+- **React Hooks**: For state management and side effects.
+
+## API Used
+
+The application uses the [Rick and Morty API](https://rickandmortyapi.com/documentation/#rest) for fetching data:
+
+- `/api/episode`: Fetches a list of all episodes.
+- `/api/character`: Fetches characters related to selected episodes.
+
+## Installation and Running Locally
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+
+###  2. Install dependencies
+
+Ensure you have Node.js installed. Then, in the project directory, run:
 ```
+npm install
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 3. Start the development server
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+To start the development server locally, run:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+npm run dev
