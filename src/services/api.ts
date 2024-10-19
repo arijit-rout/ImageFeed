@@ -11,10 +11,8 @@ export const fetchEpisodes = async () => {
 // Fetch characters by episode ID
 export const fetchCharactersByEpisode = async (episodeId: number) => {
   const response = await axios.get(`${API_BASE_URL}/episode/${episodeId}`);
-  console.log(response);
   
   const characterUrls = response.data.characters;
-  console.log(characterUrls);
   
   const characterData = await Promise.all(characterUrls.map((url: string) => axios.get(url)));
   return characterData.map((char) => char.data);
@@ -22,12 +20,10 @@ export const fetchCharactersByEpisode = async (episodeId: number) => {
 // Fetch all characters
 export const fetchAllCharacters = async () => {
   const response = await axios.get(`${API_BASE_URL}/character`);
-  console.log(response);
   
   const characterUrls = response.data.results.map((item:any)=>{
     return item.url
   });
-  console.log(characterUrls);
   
   const characterData = await Promise.all(characterUrls.map((url: string) => axios.get(url)));
   return characterData.map((char) => char.data);

@@ -24,7 +24,7 @@ const CharacterGrid: React.FC<CharacterGridProps> = ({ episodeId }) => {
       } else {
         const data = await fetchAllCharacters();
         setCharacters(data);
-        // Optionally load first page of characters for initial view
+        
       }
     };
     fetchData();
